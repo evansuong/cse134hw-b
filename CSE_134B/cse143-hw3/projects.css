@@ -102,6 +102,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 5vw 0; 
+  box-shadow: 0 15px 20px -15px #000;
 }
 
 
@@ -126,10 +127,9 @@ body {
 
 
 #projects ul h2 {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   text-align: center;
-  text-justify: center;
   opacity: 1;
   position: static;
   transition-duration: .2s;
