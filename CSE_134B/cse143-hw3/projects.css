@@ -74,7 +74,7 @@ body {
   text-align: center;
   padding: 15vh 0;
   height: 80px;
-  width: 100%;
+  width: 200px;
   box-shadow: 0 15px 30px -15px #000;
 }
 
@@ -103,6 +103,7 @@ body {
   justify-content: center;
   margin: 5vw 0; 
   box-shadow: 0 15px 20px -15px #000;
+  transition-duration: .2s;
 }
 
 
@@ -194,8 +195,8 @@ body {
 /* }  */
 
 
-@media (min-width: 1100px) {
-    
+@media (min-width: 850px) {
+
   #projects {
     grid-template-rows: 1fr;
     grid-template-areas: "col1 header col2";
@@ -203,11 +204,15 @@ body {
     align-items: center;
     align-items: start;
   }
-
+  
+  #projects h1 {
+    width: 100%;
+  }
+    
   #projects ul:nth-child(2){
     grid-area: col1;
     justify-self: right;
-}
+  }
 
   #projects ul:nth-child(3){
     grid-area: col2;
@@ -231,16 +236,18 @@ body {
     box-shadow: -15px 15px 15px -20px #000;
   }
 
-  #projects li {
-    flex-direction: row; 
-    transition-duration: .2s;
-    transition-timing-function: ease-out;
-  }
+  
   
   #projects li:hover {
     transform: translateY(10px);
   }
+}
 
+@media (min-width: 1100px) {
+  #projects li {
+    flex-direction: row; 
+    transition-timing-function: ease-out;
+  }
 }
 
 
@@ -257,18 +264,27 @@ body {
 
 .form-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   column-gap: 0;
   padding: 5vw;
   justify-items: center;
   position: relative;
-
+  grid-template-rows: 1fr 1fr;  
+  grid-template-columns: 1fr;
   background-color: var(--my-red);
   color: var(--my-orange);
   box-shadow: 0 15px 30px -15px #000;
   width: 60vw;
-  height: 50vh;
+  height: auto;
   margin: auto;
+}
+
+@media (min-width: 850px) {
+  .form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 50vh;
+  }
 }
 
 .form-item {
@@ -277,6 +293,11 @@ body {
   grid-template-rows: min-content auto;
   margin: 10px;
 }
+
+
+/* #info-container {
+  grid-column: 1; */
+/* } */
 
 #info-container fieldset {
   border: 2px solid var(--my-dark-red);
@@ -329,14 +350,10 @@ body {
   background-color: var(--my-dark-red-t);
 }
 
-#info-container {
-  grid-column: 1;
-}
 
 #message-container {
   padding: 2vw 0;
   margin: 0;
-  grid-column: 2;
   width: 80%;
   height: 70%;
   justify-self: center;
